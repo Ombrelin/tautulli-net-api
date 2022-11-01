@@ -46,7 +46,7 @@ public class TautulliApiClient : ITautulliApiClient
             .ToDictionary(property => property.Name, property => property.GetValue(request).ToString());
 
         queryParameters["apikey"] = authToken;
-        queryParameters["cmd"] = "get_history";
+        queryParameters["cmd"] = "get_history"; 
         
         var queryString = $"{string.Join("&", queryParameters.Select(kvp => $"{kvp.Key}={HttpUtility.UrlEncode(kvp.Value)}"))}";
         
